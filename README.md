@@ -2,6 +2,8 @@
 
 A Sass wrapper of [Bootstrap Icons](https://icons.getbootstrap.com/).
 
+By embedding svgs into css, you can avoid using web fonts. This package helps you to embed svgs into css.
+
 ## Usage
 
 First, install this package.
@@ -55,6 +57,11 @@ To change the icon color, change the `color` property of the element.
   transform: translateY($size * 0.15)
   mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">...</svg>')
 ```
+
+### Note
+
+This sass does not provide vendor-prefixed properties.
+If necessary, you can use some libraries such as [PostCSS Preset Env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env).
 
 ## LICENSE
 
