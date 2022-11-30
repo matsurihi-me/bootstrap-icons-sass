@@ -12,7 +12,7 @@ fs.writeSync(
 /*! Bootstrap Icons v${
     require("bootstrap-icons/package.json").version
   } (https://icons.getbootstrap.com/)
- Copyright (c) 2019-2021 The Bootstrap Authsors
+ Copyright (c) 2019-2021 The Bootstrap Authors
  Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE.md)
  Bootstrap Icons Sass v${
    require("../package.json").version
@@ -30,7 +30,7 @@ fs.writeSync(
     @return str-slice($string, 1, $index - 1) + $replace + bi-str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
   @return $string
 @function bi-escape-svg($string)
-  @return bi-str-replace($string,'#','%23')
+  @return bi-str-replace($string, '#', '%23')
 @mixin bi-mixin-base($size: 1em, $icon-size: 100%)
   &::before
     content: ''
