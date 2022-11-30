@@ -44,7 +44,7 @@ This mixin uses an icon svg as a mask image, and this mixin uses `currentColor` 
 
 To change the icon color, change the `color` property of the element, or set the color to the `fill` argument.
 
-```
+```sass
 @mixin bi-check-all($fill: currentColor, $size: 1em, $icon-size: 100%)
   content: ''
   display: inline-block
