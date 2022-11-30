@@ -16,7 +16,7 @@
     "_bootstrap_icons.sass"
   ],
   "scripts": {
-    "build": "node build.js"
+    "build": "node src/build.js"
   },
   "devDependencies": {
     "bootstrap-icons": "^1.10.2",
