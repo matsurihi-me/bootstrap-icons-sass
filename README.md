@@ -42,10 +42,10 @@ Each mixin provides a sass to replace the existing bootstrap with the icon font.
 
 This mixin uses an icon svg as a mask image, and this mixin uses `currentColor` as an icon color.
 
-To change the icon color, change the `color` property of the element.
+To change the icon color, change the `color` property of the element, or set the color to the `fill` argument.
 
 ```
-@mixin bi-check-all($size: 1em, $icon-size: 100%)
+@mixin bi-check-all($fill: currentColor, $size: 1em, $icon-size: 100%)
   content: ''
   display: inline-block
   width: $size
@@ -53,7 +53,7 @@ To change the icon color, change the `color` property of the element.
   mask-size: $icon-size $icon-size
   mask-position: center
   mask-repeat: no-repeat
-  background-color: currentColor
+  background-color: $fill
   transform: translateY($size * 0.15)
   mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">...</svg>')
 ```

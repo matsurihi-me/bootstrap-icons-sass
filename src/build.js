@@ -31,7 +31,7 @@ fs.writeSync(
   @return $string
 @function bi-escape-svg($string)
   @return bi-str-replace($string, '#', '%23')
-@mixin bi-mixin-base($size: 1em, $icon-size: 100%)
+@mixin bi-mixin-base($fill: currentColor, $size: 1em, $icon-size: 100%)
   &::before
     content: ''
     display: inline-block
@@ -40,7 +40,7 @@ fs.writeSync(
     mask-size: $icon-size $icon-size
     mask-position: center
     mask-repeat: no-repeat
-    background-color: currentColor
+    background-color: $fill
     transform: translateY($size * 0.15)
 `
 );
@@ -76,7 +76,7 @@ files.forEach((file) => {
 @function bi-${name}($fill: #000)
   @return 'data:image/svg+xml,' + bi-escape-svg('${svgWithFill}')
 @mixin bi-${name}($fill: currentColor, $size: 1em, $icon-size: 100%)
-  @include bi-mixin-base($size, $icon-size)
+  @include bi-mixin-base($fill, $size, $icon-size)
   &::before
     mask-image: url('data:image/svg+xml,${escapeSvg(svg)}')
 `
