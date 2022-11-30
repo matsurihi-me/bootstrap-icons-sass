@@ -22,21 +22,14 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      - uses: actions/cache@v3
-        id: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-modules-
-      - if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm install
+      - run: npm install
       - uses: reviewdog/action-eslint@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
           level: info
           fail_on_error: true
-          eslint_flags: build.js
+          eslint_flags: src
   test:
     runs-on: ubuntu-latest
     permissions:
@@ -48,12 +41,5 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      - uses: actions/cache@v3
-        id: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-modules-
-      - if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm install
+      - run: npm install
       - run: npm run build
