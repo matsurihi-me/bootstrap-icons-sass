@@ -21,7 +21,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
       - run: npm install
       - uses: reviewdog/action-eslint@v1
         with:
@@ -40,6 +39,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
       - run: npm install
       - run: npm run build
