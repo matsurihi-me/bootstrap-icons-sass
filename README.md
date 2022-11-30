@@ -23,11 +23,11 @@ Next, use this in your project.
 
 ## Detailed information
 
-This sass provides one function and one mixin.
+This sass provides one function and one mixin for each icon.
 
 ### Function
 
-This function returns svg itself with the specified fill color.
+Each functions returns svg url with the specified fill color.
 
 ```sass
 @function bi-check-circle-fill($fill: #000)
@@ -36,10 +36,14 @@ This function returns svg itself with the specified fill color.
 
 ### Mixin
 
-This mixin provides a sass to replace the existing bootstrap with the icon font.
+Each mixin provides a sass to replace the existing bootstrap with the icon font.
+
+This mixin uses an icon svg as a mask image, and this mixin uses `currentColor` as an icon color.
+
+To change the icon color, change the `color` property of the element.
 
 ```
-@mixin bi-check-all($fill: currentColor, $size: 1em, $icon-size: 100%)
+@mixin bi-check-all($size: 1em, $icon-size: 100%)
   content: ''
   display: inline-block
   width: $size
@@ -54,7 +58,7 @@ This mixin provides a sass to replace the existing bootstrap with the icon font.
 
 ## LICENSE
 
-This is released under the MIT License.
+This package is released under the MIT License.
 
 ## Bug Report / Contribution
 
